@@ -5,7 +5,7 @@ const { Op, Sequelize } = require('sequelize');
 const Cliente = require('../models').cliente;
 const Servicio = require('../models').servicio;
 
-router.get('/cjson',
+router.get('/find',
     function (req, res, next) {
         Cliente.findAll({
             attributes:
@@ -20,7 +20,7 @@ router.get('/cjson',
                 res.status(400).send(error))
     });
 
-router.get('/cjson/:id',
+router.get('/find/:id',
     function (req, res, next) {
         const id = req.params.id;
 
